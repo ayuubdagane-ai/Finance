@@ -1,0 +1,407 @@
+/* style.css - Ultimate Premium Design for Income & Outcome System */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 200% 200%;
+    animation: cosmicFlow 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated cosmic background */
+@keyframes cosmicFlow {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating orbs decoration */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,107,157,0.4), transparent);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    animation: floatOrb 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78,205,196,0.3), transparent);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+    animation: floatOrb 25s ease-in-out infinite reverse;
+    pointer-events: none;
+}
+
+@keyframes floatOrb {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate(50px, 30px) scale(1.2); opacity: 0.8; }
+}
+
+/* Star particles */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Main container - premium glass card */
+.container {
+    background: rgba(15, 25, 45, 0.45);
+    backdrop-filter: blur(16px);
+    border-radius: 2.5rem;
+    padding: 2.2rem 2rem 2.8rem;
+    width: 100%;
+    max-width: 560px;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+        0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    z-index: 10;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+        0 35px 60px -15px rgba(0, 0, 0, 0.6),
+        0 0 0 1.5px rgba(255, 255, 255, 0.3) inset,
+        0 0 30px rgba(255, 107, 157, 0.3);
+}
+
+/* Glowing heading */
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFF8E7, #FFD700, #FF6B9D, #C084FC);
+    background-size: 300% 300%;
+    animation: gradientShift 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 20px rgba(255,215,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+h1::before {
+    content: "💎";
+    font-size: 2rem;
+    background: none;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+h1::after {
+    content: "📊";
+    font-size: 2rem;
+    background: none;
+    animation: bounce 2s ease-in-out infinite 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+}
+
+/* Premium input fields */
+input, select {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 1rem 1.3rem;
+    border-radius: 1.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a2e;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+input:hover, select:hover {
+    background: white;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+input:focus, select:focus {
+    background: white;
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: #FF6B9D;
+}
+
+input::placeholder {
+    color: #8888aa;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Fancy select dropdown */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23FF6B9D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1.3rem center;
+    background-size: 1.2rem;
+}
+
+/* Premium button - neon effect */
+button {
+    background: linear-gradient(125deg, #FF6B9D, #C084FC, #FFD700);
+    background-size: 200% 200%;
+    animation: buttonShine 3s ease infinite;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    margin-top: 0.5rem;
+    letter-spacing: 0.8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 107, 157, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes buttonShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+button::before {
+    content: "💾";
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+    transform: rotate(25deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+button:hover::after {
+    left: 100%;
+    opacity: 1;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Option styling */
+option[value="Income"] {
+    background: linear-gradient(135deg, #c8e6df, #a8e6cf);
+    color: #006644;
+    font-weight: 600;
+}
+
+option[value="Outcome"] {
+    background: linear-gradient(135deg, #ffd6d6, #ffb8b8);
+    color: #c0392b;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h1::before, h1::after {
+        font-size: 1.3rem;
+    }
+    
+    input, select, button {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FF6B9D, #C084FC);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FFD700, #FF6B9D);
+}
+
+/* Input number spinner styling */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.5;
+    background: #FF6B9D;
+    border-radius: 5px;
+}
+
+/* Loading animation for any async operations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Focus ring for accessibility */
+input:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 3px solid #FFD700;
+    outline-offset: 3px;
+}
+
+/* Ripple effect for container */
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    animation: slowPan 40s linear infinite;
+    border-radius: 2.5rem;
+}
+
+@keyframes slowPan {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+/* Glass reflection effect */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    border-radius: 2.5rem;
+}
+
+/* Success/error message styling (if needed later) */
+.message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
